@@ -50,9 +50,9 @@ export default function Nav() {
       <AnimatePresence initial={false}>
         {isOpen ? (
           <motion.div
-            initial={{ opacity: 0, scale: 0.4, y: -60, }}
-            animate={{ opacity: 1, scale: 1, y:0 }}
-            exit={{ opacity: 0, scale: 0, y: -60, }}
+            initial={{ opacity: 0, scale: 0.4, y: -60 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            exit={{ opacity: 0, scale: 0, y: -60 }}
             className="absolute right-0 mt-4 w-80 rounded-md border-2 bg-white shadow-lg"
           >
             <div className="py-1">
