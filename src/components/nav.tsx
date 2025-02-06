@@ -7,9 +7,11 @@ import { AnimatePresence } from "motion/react";
 
 const menuItems = [
   { name: "Home", href: "/" },
-  { name: "About", href: "/about" },
-  { name: "Services", href: "/services" },
-  { name: "Contact", href: "/contact" },
+  { name: "Services", href: "#services" },
+  { name: "Benefits", href: "#benefits" },
+  { name: "Process", href: "#process" },
+  { name: "Testimonials", href: "#testimonials" },
+  { name: "Contact", href: "#contact" },
 ];
 
 export default function Nav() {
