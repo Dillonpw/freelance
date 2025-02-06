@@ -24,6 +24,8 @@ export default function Contact() {
           animate={{ opacity: 1 }}
           transition={{ duration: 0.5 }}
         >
+<input type="hidden" name="form-name" value="contact" />
+
           <div className="mb-4">
             <label htmlFor="name" className="block text-teal-700 font-bold mb-2">
               Name
