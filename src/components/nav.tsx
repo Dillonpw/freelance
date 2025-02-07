@@ -1,9 +1,5 @@
-"use client";
-
-import { Menu, X } from "lucide-react";
-import { useState, useRef, useEffect } from "react";
-import * as motion from "motion/react-client";
-import { AnimatePresence } from "motion/react";
+import { Menu } from "lucide-react";
+import * as DropdownMenu from "@radix-ui/react-dropdown-menu";
 
 const menuItems = [
   { name: "Home", href: "/" },
@@ -15,63 +11,38 @@ const menuItems = [
 ];
 
 export default function Nav() {
-  const [isOpen, setIsOpen] = useState(false);
-  const dropdownRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    function handleClickOutside(event: MouseEvent) {
-      if (
-        dropdownRef.current &&
-        !dropdownRef.current.contains(event.target as Node)
-      ) {
-        setIsOpen(false);
-      }
-    }
-
-    document.addEventListener("mousedown", handleClickOutside);
-    return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
-    };
-  }, []);
-
   return (
-    <div className="relative" ref={dropdownRef}>
-      <button
-        onClick={() => setIsOpen(!isOpen)}
-        className="flex items-center text-gray-700 hover:text-gray-900"
-        aria-expanded={isOpen}
-        aria-haspopup="true"
-      >
-        {isOpen ? (
-          <X className="h-6 w-6" aria-hidden="true" />
-        ) : (
-          <Menu className="h-6 w-6" aria-hidden="true" />
-        )}
-      </button>
+    <DropdownMenu.Root>
+      <DropdownMenu.Trigger asChild>
+        <button
+          className="flex items-center text-gray-700 hover:text-gray-900 rounded-md p-2 focus:outline-rounded-md focus:outline-gray-400"
+          aria-label="Toggle menu"
+        >
+            <Menu className="h-6 w-6" />
+        </button>
+      </DropdownMenu.Trigger>
 
-      <AnimatePresence initial={false}>
-        {isOpen ? (
-          <motion.div
-            initial={{ opacity: 0, scale: 0.4, y: -60 }}
-            animate={{ opacity: 1, scale: 1, y: 0 }}
-            exit={{ opacity: 0, scale: 0, y: -60 }}
-            className="absolute right-0 mt-4 w-80 rounded-md border-2 bg-white shadow-lg"
-          >
-            <div className="py-1">
-              {menuItems.map((item) => (
-                <a
-                  key={item.name}
-                  href={item.href}
-                  className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900"
-                  onClick={() => setIsOpen(false)}
-                >
-                  {item.name}
-                </a>
-              ))}
+      <DropdownMenu.Portal>
+        <DropdownMenu.Content
+          className="absolute right-0 mt-4 w-80 z-100 rounded-md border bg-white p-2 shadow-lg"
+          sideOffset={8}
+          align="end"
+        >
+          {menuItems.map((item, index) => (
+            <div key={item.name}>
+              <DropdownMenu.Item
+                asChild
+                className="block cursor-pointer rounded-md px-2 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900 focus:bg-gray-200 focus:outline-none"
+              >
+                <a href={item.href}>{item.name}</a>
+              </DropdownMenu.Item>
+              {index < menuItems.length - 1 && (
+                <DropdownMenu.Separator className="my-1 h-px bg-gray-200" />
+              )}
             </div>
-          </motion.div>
-        ) : null}
-      </AnimatePresence>
-    </div>
+          ))}
+        </DropdownMenu.Content>
+      </DropdownMenu.Portal>
+    </DropdownMenu.Root>
   );
 }
