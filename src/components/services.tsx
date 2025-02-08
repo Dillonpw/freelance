@@ -30,7 +30,7 @@ export default function Services() {
   return (
     <section id="services" className="py-32 bg-white">
       <div className="container mx-auto px-4">
-        <h2 className="text-2xl font-bold mb-12 text-center text-teal-600">
+        <h2 className="text-2xl font-bold mb-12 text-center text-emerald-600">
           Services I Offer
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -39,7 +39,7 @@ export default function Services() {
             return (
               <motion.div
                 key={service.title}
-                className="bg-teal-50 rounded-lg p-6 shadow-lg"
+                className="bg-emerald-50 rounded-lg p-6 shadow-lg"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
