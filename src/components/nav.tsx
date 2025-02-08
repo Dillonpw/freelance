@@ -23,7 +23,7 @@ export default function Nav() {
     <DropdownMenu.Root>
       <DropdownMenu.Trigger asChild>
         <button
-          className="focus:outline-rounded-md flex items-center rounded-md p-2 text-gray-700 hover:bg-gray-200 focus:outline-gray-400"
+          className="flex items-center rounded-md p-2 text-gray-700 hover:bg-emerald-100 focus:outline-gray-400 focus:outline-none"
           aria-label="Toggle menu"
         >
           <Menu className="h-6 w-6" />
@@ -33,7 +33,7 @@ export default function Nav() {
       <DropdownMenu.Portal>
         <DropdownMenu.Content
           align="end"
-          className="z-100 w-[100vw] mx-auto rounded-b-md border-t-2 bg-emerald-50 shadow-lg"
+          className="z-100 mx-auto w-[100vw] rounded-b-md border-t-2 bg-transparent shadow-lg backdrop-blur-2xl"
           sideOffset={8}
         >
           <div className="py-2">
@@ -41,7 +41,7 @@ export default function Nav() {
               <div key={item.name}>
                 <DropdownMenu.Item
                   asChild
-                  className="flex w-full cursor-pointer items-center px-4 py-2 text-sm text-gray-700 hover:bg-gray-200 focus:outline-none"
+                  className="flex cursor-pointer items-center px-4 py-2 text-sm text-gray-700 hover:bg-emerald-100 focus:outline-none md:text-lg lg:text-xl"
                 >
                   <a href={item.href} className="flex w-full items-center">
                     <item.icon className="mr-2 h-4 w-4" />
@@ -49,7 +49,7 @@ export default function Nav() {
                   </a>
                 </DropdownMenu.Item>
                 {index < menuItems.length - 1 && (
-                  <DropdownMenu.Separator className="mx-4 my-1 h-px bg-gray-200" />
+                  <DropdownMenu.Separator className="mx-4 my-1 h-px bg-emerald-200" />
                 )}
               </div>
             ))}

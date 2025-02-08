@@ -1,7 +1,7 @@
-"use client"
+"use client";
 
-import * as motion from "motion/react-client"
-import { CheckCircle } from "lucide-react"
+import * as motion from "motion/react-client";
+import { CheckCircle } from "lucide-react";
 
 const benefits = [
   "Customized solutions tailored to your specific needs",
@@ -10,14 +10,18 @@ const benefits = [
   "Cost-effective without compromising on quality",
   "Diverse skill set to handle various project requirements",
   "Ongoing support and maintenance",
-]
+];
+
+//TODO: add icons maybe
 
 export default function Benefits() {
   return (
-    <section id="benefits" className="py-20 lg:py-32 bg-emerald-300">
+    <section id="benefits" className="bg-emerald-300 py-20 md:py-32 lg:py-38">
       <div className="container mx-auto px-4">
-        <h2 className="text-2xl font-bold mb-12 text-center">Why Choose a Freelance Web Developer?</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <h2 className="mb-12 text-center text-2xl font-bold md:mb-20 md:text-4xl">
+          Is a Freelance Web Developer Right for You?
+        </h2>
+        <div className="grid grid-cols-1 gap-8 md:grid-cols-2 md:gap-18">
           {benefits.map((benefit, index) => (
             <motion.div
               key={index}
@@ -26,13 +30,12 @@ export default function Benefits() {
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
             >
-              <CheckCircle className="w-6 h-6 text-teal-300 mr-4 flex-shrink-0 mt-1" />
-              <p className="text-md">{benefit}</p>
+              <CheckCircle className="mt-1 mr-4 h-6 w-6 flex-shrink-0 text-teal-300" />
+              <p className="text-md md:text-lg">{benefit}</p>
             </motion.div>
           ))}
         </div>
       </div>
     </section>
-  )
+  );
 }
-

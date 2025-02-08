@@ -15,9 +15,9 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="bg-white py-20">
+    <section id="contact" className="bg-white py-20 md:py-32 lg:py-38">
       <div className="container mx-auto px-4">
-        <h2 className="mb-12 text-center text-xl font-bold text-teal-600">
+        <h2 className="mb-12 text-center text-xl font-bold text-teal-600 md:mb-20 md:text-4xl">
           Get in Touch
         </h2>
         <motion.form
@@ -32,7 +32,7 @@ export default function Contact() {
           <div className="mb-4">
             <label
               htmlFor="name"
-              className="mb-2 block font-semibold text-teal-700"
+              className="mb-2 block font-semibold text-teal-700 md:text-lg"
             >
               Name
             </label>
@@ -48,7 +48,7 @@ export default function Contact() {
           <div className="mb-4">
             <label
               htmlFor="email"
-              className="mb-2 block font-semibold text-teal-700"
+              className="mb-2 block font-semibold text-teal-700 md:text-lg"
             >
               Email
             </label>
@@ -64,7 +64,7 @@ export default function Contact() {
           <div className="mb-6">
             <label
               htmlFor="message"
-              className="mb-2 block font-semibold text-teal-700"
+              className="mb-2 block font-semibold text-teal-700 md:text-lg"
             >
               Message
             </label>
@@ -80,7 +80,7 @@ export default function Contact() {
           <div className="flex justify-center">
             <motion.button
               type="submit"
-              className="rounded-lg cursor-pointer bg-teal-600 px-6 py-2 font-semibold text-white transition-colors duration-300 hover:bg-teal-700"
+              className="cursor-pointer rounded-lg bg-teal-600 px-6 py-2 font-semibold text-white transition-colors duration-300 hover:bg-teal-700 md:text-lg"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >

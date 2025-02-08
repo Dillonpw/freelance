@@ -1,12 +1,17 @@
-import { useRef, useState, useEffect } from "react"
-import * as THREE from "three"
-import { Canvas, extend, useFrame, type Object3DNode } from "@react-three/fiber"
-import { shaderMaterial, OrbitControls } from "@react-three/drei"
+import { useRef, useState, useEffect } from "react";
+import * as THREE from "three";
+import {
+  Canvas,
+  extend,
+  useFrame,
+  type Object3DNode,
+} from "@react-three/fiber";
+import { shaderMaterial, OrbitControls } from "@react-three/drei";
 
 // Material type declaration and augmentation
 declare module "@react-three/fiber" {
   interface ThreeElements {
-    fluidMaterial: Object3DNode<typeof FluidMaterial, typeof FluidMaterial>
+    fluidMaterial: Object3DNode<typeof FluidMaterial, typeof FluidMaterial>;
   }
 }
 
@@ -116,7 +121,7 @@ const vertexShader = `
 
     gl_Position = projectionMatrix * modelViewMatrix * vec4(newPosition, 1.0);
   }
-`
+`;
 
 const fragmentShader = `
 varying vec2 vUv;
@@ -157,7 +162,7 @@ void main() {
   
   gl_FragColor = vec4(color, 0.85 + fresnel * 0.15);  // Adjusted opacity range
 }
-`
+`;
 
 const FluidMaterial = shaderMaterial(
   {
@@ -167,67 +172,78 @@ const FluidMaterial = shaderMaterial(
   },
   vertexShader,
   fragmentShader,
-)
+);
 
 // Extend FluidMaterial for use in JSX
-extend({ FluidMaterial })
+extend({ FluidMaterial });
 
 export default function Three() {
   const FluidSphere = () => {
-    const meshRef = useRef<THREE.Mesh>(null!)
-    const materialRef = useRef<typeof FluidMaterial>(null!)
+    const meshRef = useRef<THREE.Mesh>(null!);
+    const materialRef = useRef<typeof FluidMaterial>(null!);
     const [sphereScale, setSphereScale] = useState(() => {
       if (typeof window !== "undefined") {
-        const width = window.innerWidth
-        if (width < 640) return 2
-        if (width < 1024) return 2.6
-        return 3
+        const width = window.innerWidth;
+        if (width < 640) return 2;
+        if (width < 1024) return 2.2;
+        return 2.6;
       }
-      return 2 // Default for SSR
-    })
+      return 2; // Default for SSR
+    });
 
     useEffect(() => {
       const handleResize = () => {
-        const width = window.innerWidth
+        const width = window.innerWidth;
         if (width < 640) {
-          setSphereScale(2)
+          setSphereScale(2);
         } else if (width < 1024) {
-          setSphereScale(2.6)
+          setSphereScale(2.2);
         } else {
-          setSphereScale(3)
+          setSphereScale(2.6);
         }
-      }
+      };
 
-      window.addEventListener("resize", handleResize)
-      return () => window.removeEventListener("resize", handleResize)
-    }, [])
+      window.addEventListener("resize", handleResize);
+      return () => window.removeEventListener("resize", handleResize);
+    }, []);
 
     useFrame((state) => {
       if (materialRef.current) {
         // eslint-disable-next-line @typescript-eslint/no-explicit-any
-        ;(materialRef.current as any).uniforms.uTime.value = state.clock.elapsedTime
+        (materialRef.current as any).uniforms.uTime.value =
+          state.clock.elapsedTime;
       }
-    })
+    });
 
     return (
       <mesh ref={meshRef}>
         <sphereGeometry args={[sphereScale, 256, 256]} />
         <fluidMaterial ref={materialRef} />
       </mesh>
-    )
-  }
+    );
+  };
 
   return (
     <Canvas
       camera={{
         position: [0, 0, 10],
-        fov: typeof window !== "undefined" ? (window.innerWidth < 640 ? 40 : 50) : 50,
+        fov:
+          typeof window !== "undefined"
+            ? window.innerWidth < 640
+              ? 40
+              : 50
+            : 50,
       }}
       className="h-fit w-full"
     >
-      <OrbitControls enableZoom={false} enablePan={false} rotateSpeed={0.5} autoRotate={true} autoRotateSpeed={0.5} />
+      <OrbitControls
+        enableZoom={false}
+        enablePan={false}
+        rotateSpeed={0.5}
+        autoRotate={true}
+        autoRotateSpeed={0.5}
+      />
       <FluidSphere />
     </Canvas>
-  )
+  );
 }
-

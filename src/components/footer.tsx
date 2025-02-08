@@ -42,8 +42,8 @@ export default function Footer() {
       <div className="container px-6 py-12">
         <div className="grid grid-cols-1 gap-8 md:grid-cols-4">
           <div>
-            <h2 className="mb-4 text-xl font-bold">BRAND</h2>
-            <p className="mb-4">
+            <h2 className="mb-4 text-xl md:text-2xl font-bold">BRAND</h2>
+            <p className="mb-4 md:text-lg">
               Crafting digital experiences that inspire and innovate.
             </p>
             <div className="flex space-x-2">
@@ -63,13 +63,13 @@ export default function Footer() {
           </div>
           {footerLinks.map((section) => (
             <div key={section.title}>
-              <h3 className="mb-4 text-lg font-semibold">{section.title}</h3>
+              <h3 className="mb-4 text-lg md:text-xl font-semibold">{section.title}</h3>
               <ul className="space-y-2">
                 {section.links.map((link) => (
                   <li key={link.name}>
                     <a
                       href={link.href}
-                      className="transition-colors duration-300 hover:underline"
+                      className="transition-colors duration-300 hover:underline md:text-lg"
                     >
                       {link.name}
                     </a>
@@ -79,11 +79,11 @@ export default function Footer() {
             </div>
           ))}
         </div>
-        <div className="mt-12 flex flex-col items-center justify-between pt-8 md:flex-row">
+        <div className="mt-12 flex flex-col items-center justify-between md:text-lg pt-8 md:flex-row">
           <p>&copy; {new Date().getFullYear()} BRAND. All rights reserved.</p>
           <div className="mt-4 flex items-center md:mt-0">
             <Mail className="mr-2 h-6 w-6" />
-            <a href="mailto:contact@brand.com" className="hover:underline">
+            <a href="mailto:contact@brand.com" className="hover:underline md:text-lg">
               contact@brand.com
             </a>
           </div>

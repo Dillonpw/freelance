@@ -1,7 +1,14 @@
-"use client"
+"use client";
 
-import { motion } from "framer-motion"
-import { MessageCircle, FileText, Palette, Code, TestTube, Rocket } from "lucide-react"
+import { motion } from "framer-motion";
+import {
+  MessageCircle,
+  FileText,
+  Palette,
+  Code,
+  TestTube,
+  Rocket,
+} from "lucide-react";
 
 const steps = [
   {
@@ -31,16 +38,19 @@ const steps = [
   },
   {
     title: "Launch",
-    description: "Your website goes live, fully optimized and ready to impress.",
+    description:
+      "Your website goes live, fully optimized and ready to impress.",
     icon: Rocket,
   },
-]
+];
 
 export default function Process() {
   return (
-    <section id="process" className="bg-white py-20 lg:py-32">
+    <section id="process" className="bg-white py-20 md:py-32 lg:py-38">
       <div className="container mx-auto px-4">
-        <h2 className="mb-12 text-center text-2xl font-bold text-teal-600">My Process</h2>
+        <h2 className="mb-12 text-center text-2xl font-bold text-teal-600 md:text-4xl">
+          Our Process
+        </h2>
         <div className="mx-auto max-w-3xl">
           {steps.map((step, index) => (
             <motion.div
@@ -54,14 +64,15 @@ export default function Process() {
                 <step.icon className="h-6 w-6 text-teal-600" />
               </div>
               <div>
-                <h3 className="mb-2 text-lg font-semibold text-teal-800">{step.title}</h3>
-                <p className="text-teal-700">{step.description}</p>
+                <h3 className="mb-2 text-lg font-semibold text-teal-800 md:text-xl">
+                  {step.title}
+                </h3>
+                <p className="text-teal-700 md:text-lg">{step.description}</p>
               </div>
             </motion.div>
           ))}
         </div>
       </div>
     </section>
-  )
+  );
 }
-

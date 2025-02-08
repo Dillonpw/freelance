@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import { motion } from "framer-motion";
 import { Code, Palette, Smartphone, Zap } from "lucide-react";
@@ -7,51 +7,57 @@ const services = [
   {
     title: "Custom Web Development",
     icon: Code,
-    description: "Tailor-made websites that perfectly align with your brand and goals.",
+    description:
+      "Tailor-made websites that perfectly align with your brand and goals.",
   },
   {
     title: "Responsive Design",
     icon: Smartphone,
-    description: "Ensure your site looks great and functions flawlessly on all devices.",
+    description:
+      "Ensure your site looks great and functions flawlessly on all devices.",
   },
   {
     title: "UI/UX Design",
     icon: Palette,
-    description: "Create intuitive, engaging user experiences that keep visitors coming back.",
+    description:
+      "Create intuitive, engaging user experiences that keep visitors coming back.",
   },
   {
     title: "Performance Optimization",
     icon: Zap,
-    description: "Boost your site's speed and efficiency for better user satisfaction and SEO.",
+    description:
+      "Boost your site's speed and efficiency for better user satisfaction and SEO.",
   },
 ];
 
 export default function Services() {
   return (
-    <section id="services" className="py-20 lg:pt-32 bg-white">
+    <section id="services" className="bg-white py-20 md:py-32 lg:py-38">
       <div className="container mx-auto px-4">
-        <h2 className="text-2xl font-bold mb-12 text-center text-emerald-600">
+        <h2 className="mb-12 text-center text-2xl font-bold text-emerald-600 md:mb-20 md:text-4xl">
           Our Services
         </h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 gap-8 md:grid-cols-2 md:gap-18">
           {services.map((service, index) => {
             const Icon = service.icon;
             return (
               <motion.div
                 key={service.title}
-                className="bg-emerald-50 rounded-lg p-6 shadow-lg"
+                className="rounded-lg bg-emerald-50 p-6 shadow-lg"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
               >
-                <div className="flex gap-2 items-center">
-                <Icon className="w-6 h-6 text-teal-600 mb-4" />
-                <h3 className="text-lg font-semibold mb-2 text-teal-800">
-                  {service.title}
-                </h3>
+                <div className="flex items-center gap-2">
+                  <Icon className="mb-3 h-6 w-6 text-teal-600" />
+                  <h3 className="mb-2 text-lg font-semibold text-teal-800 md:text-xl">
+                    {service.title}
+                  </h3>
                 </div>
-                <p className="text-teal-700 text-md">{service.description}</p>
+                <p className="text-teal-700 md:text-lg">
+                  {service.description}
+                </p>
               </motion.div>
             );
           })}

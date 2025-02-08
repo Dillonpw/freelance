@@ -25,12 +25,12 @@ const testimonials = [
 
 export default function Testimonials() {
   return (
-    <section id="testimonials" className="bg-teal-50 py-20">
+    <section id="testimonials" className="bg-teal-50 py-20 md:py-32 lg:py-38">
       <div className="container mx-auto px-4">
-        <h2 className="mb-12 text-center text-xl font-bold text-teal-600">
+        <h2 className="mb-12 text-center text-xl font-bold text-teal-600 md:mb-20 md:text-4xl">
           What Clients Say
         </h2>
-        <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
+        <div className="grid grid-cols-1 gap-8 md:grid-cols-3 md:gap-4">
           {testimonials.map((testimonial, index) => (
             <motion.div
               key={testimonial.name}
@@ -39,12 +39,14 @@ export default function Testimonials() {
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
             >
-              <p className="mb-4 text-teal-700">"{testimonial.content}"</p>
+              <p className="mb-4 text-teal-700 md:text-lg">
+                "{testimonial.content}"
+              </p>
               <div>
-                <p className="font-semibold text-teal-800">
+                <p className="font-semibold text-teal-800 md:text-lg">
                   {testimonial.name}
                 </p>
-                <p className="text-teal-600">{testimonial.role}</p>
+                <p className="text-teal-600 md:text-lg">{testimonial.role}</p>
               </div>
             </motion.div>
           ))}
