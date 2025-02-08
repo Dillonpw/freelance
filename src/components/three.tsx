@@ -179,18 +179,18 @@ export default function Three() {
     const [sphereScale, setSphereScale] = useState(() => {
       if (typeof window !== "undefined") {
         const width = window.innerWidth
-        if (width < 640) return 2.4
+        if (width < 640) return 2
         if (width < 1024) return 2.6
         return 3
       }
-      return 3 // Default for SSR
+      return 2 // Default for SSR
     })
 
     useEffect(() => {
       const handleResize = () => {
         const width = window.innerWidth
         if (width < 640) {
-          setSphereScale(2.4)
+          setSphereScale(2)
         } else if (width < 1024) {
           setSphereScale(2.6)
         } else {

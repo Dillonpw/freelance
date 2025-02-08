@@ -5,7 +5,7 @@ import Three from "./three";
 
 export default function Hero() {
   return (
-    <section className="relative h-[40vh] md:h-[60vh] lg:h-screen overflow-hidden bg-emerald-50">
+    <section className="relative h-[60vh] md:h-[100vh] lg:h-screen overflow-hidden bg-emerald-50">
       <Three />
       <div className="absolute inset-0 z-1 flex flex-col items-center justify-center px-4">
         <motion.h1
