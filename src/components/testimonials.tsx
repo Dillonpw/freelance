@@ -1,6 +1,6 @@
-"use client"
+"use client";
 
-import * as motion from "motion/react-client"
+import * as motion from "motion/react-client";
 
 const testimonials = [
   {
@@ -21,25 +21,29 @@ const testimonials = [
     content:
       "As a small business owner, I appreciated the personalized approach and the value for money. My new website has significantly boosted my online presence.",
   },
-]
+];
 
 export default function Testimonials() {
   return (
-    <section id="testimonials" className="py-20 bg-teal-50">
+    <section id="testimonials" className="bg-teal-50 py-20">
       <div className="container mx-auto px-4">
-        <h2 className="text-4xl font-bold mb-12 text-center text-teal-600">What Clients Say</h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <h2 className="mb-12 text-center text-xl font-bold text-teal-600">
+          What Clients Say
+        </h2>
+        <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
           {testimonials.map((testimonial, index) => (
             <motion.div
               key={testimonial.name}
-              className="bg-white p-6 rounded-lg shadow-lg"
+              className="rounded-lg bg-white p-6 shadow-lg"
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
             >
-              <p className="text-teal-700 mb-4">"{testimonial.content}"</p>
+              <p className="mb-4 text-teal-700">"{testimonial.content}"</p>
               <div>
-                <p className="font-semibold text-teal-800">{testimonial.name}</p>
+                <p className="font-semibold text-teal-800">
+                  {testimonial.name}
+                </p>
                 <p className="text-teal-600">{testimonial.role}</p>
               </div>
             </motion.div>
@@ -47,6 +51,5 @@ export default function Testimonials() {
         </div>
       </div>
     </section>
-  )
+  );
 }
-

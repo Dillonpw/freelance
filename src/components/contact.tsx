@@ -1,33 +1,39 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import * as motion from "motion/react-client"
+import { useState } from "react";
+import { motion } from "framer-motion";
+
 export default function Contact() {
-  const [name, setName] = useState("")
-  const [email, setEmail] = useState("")
-  const [message, setMessage] = useState("")
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
 
   const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
+    e.preventDefault();
     // Handle form submission here
-    console.log("Form submitted:", { name, email, message })
-  }
+    console.log("Form submitted:", { name, email, message });
+  };
 
   return (
-    <section id="contact" className="py-20 bg-white">
+    <section id="contact" className="bg-white py-20">
       <div className="container mx-auto px-4">
-        <h2 className="text-4xl font-bold mb-12 text-center text-teal-600">Get in Touch</h2>
+        <h2 className="mb-12 text-center text-xl font-bold text-teal-600">
+          Get in Touch
+        </h2>
         <motion.form
           onSubmit={handleSubmit}
-          className="max-w-lg mx-auto"
+          className="mx-auto max-w-lg"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.5 }}
         >
-<input type="hidden" name="form-name" value="contact" />
+          <input type="hidden" name="form-name" value="contact" />
 
           <div className="mb-4">
-            <label htmlFor="name" className="block text-teal-700 font-bold mb-2">
+            <label
+              htmlFor="name"
+              className="mb-2 block font-semibold text-teal-700"
+            >
               Name
             </label>
             <input
@@ -35,12 +41,15 @@ export default function Contact() {
               id="name"
               value={name}
               onChange={(e) => setName(e.target.value)}
-              className="w-full px-3 py-2 text-teal-700 border border-teal-300 rounded-lg focus:outline-none focus:border-teal-500"
+              className="w-full rounded-lg border border-teal-300 px-3 py-2 text-teal-700 focus:border-teal-500 focus:bg-gray-50 focus:outline-none"
               required
             />
           </div>
           <div className="mb-4">
-            <label htmlFor="email" className="block text-teal-700 font-bold mb-2">
+            <label
+              htmlFor="email"
+              className="mb-2 block font-semibold text-teal-700"
+            >
               Email
             </label>
             <input
@@ -48,34 +57,38 @@ export default function Contact() {
               id="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              className="w-full px-3 py-2 text-teal-700 border border-teal-300 rounded-lg focus:outline-none focus:border-teal-500"
+              className="w-full rounded-lg border border-teal-300 px-3 py-2 text-teal-700 focus:border-teal-500 focus:bg-gray-50 focus:outline-none"
               required
             />
           </div>
-          <div className="mb-4">
-            <label htmlFor="message" className="block text-teal-700 font-bold mb-2">
+          <div className="mb-6">
+            <label
+              htmlFor="message"
+              className="mb-2 block font-semibold text-teal-700"
+            >
               Message
             </label>
             <textarea
               id="message"
               value={message}
               onChange={(e) => setMessage(e.target.value)}
-              className="w-full px-3 py-2 text-teal-700 border border-teal-300 rounded-lg focus:outline-none focus:border-teal-500"
+              className="w-full rounded-lg border border-teal-300 px-3 py-2 text-teal-700 focus:border-teal-500 focus:bg-gray-50 focus:outline-none"
               rows={4}
               required
             ></textarea>
           </div>
-          <motion.button
-            type="submit"
-            className="w-full bg-teal-600 text-white font-bold py-2 px-4 rounded-lg hover:bg-teal-700 transition-colors duration-300"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            Send Message
-          </motion.button>
+          <div className="flex justify-center">
+            <motion.button
+              type="submit"
+              className="rounded-lg bg-teal-600 px-6 py-2 font-semibold text-white transition-colors duration-300 hover:bg-teal-700"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              Send Message
+            </motion.button>
+          </div>
         </motion.form>
       </div>
     </section>
-  )
+  );
 }
-

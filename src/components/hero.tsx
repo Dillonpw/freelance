@@ -17,7 +17,7 @@ export default function Hero() {
           Elevate Your <br className="md:hidden" />Internet Presence
         </motion.h1>
         <motion.p
-          className="mx-10 mb-8 text-center text-sm drop-shadow-[0_1.2px_1.6px_rgba(255,255,255,1)] md:text-2xl"
+          className="mx-10 mb-8 text-center text-md drop-shadow-[0_1.2px_1.6px_rgba(255,255,255,1)] md:text-2xl"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}

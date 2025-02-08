@@ -14,9 +14,9 @@ const benefits = [
 
 export default function Benefits() {
   return (
-    <section id="benefits" className="py-20 bg-teal-600 text-white">
+    <section id="benefits" className="py-20 lg:py-32 bg-emerald-300">
       <div className="container mx-auto px-4">
-        <h2 className="text-4xl font-bold mb-12 text-center">Why Choose a Freelance Web Developer?</h2>
+        <h2 className="text-2xl font-bold mb-12 text-center">Why Choose a Freelance Web Developer?</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {benefits.map((benefit, index) => (
             <motion.div
@@ -27,7 +27,7 @@ export default function Benefits() {
               transition={{ duration: 0.5, delay: index * 0.1 }}
             >
               <CheckCircle className="w-6 h-6 text-teal-300 mr-4 flex-shrink-0 mt-1" />
-              <p className="text-lg">{benefit}</p>
+              <p className="text-md">{benefit}</p>
             </motion.div>
           ))}
         </div>
