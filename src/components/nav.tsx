@@ -33,7 +33,7 @@ export default function Nav() {
       <DropdownMenu.Portal>
         <DropdownMenu.Content
           align="end"
-          className="z-100 w-[100vw] rounded-b-md border-t-2 bg-emerald-50 shadow-lg"
+          className="z-100 w-[100vw] mx-auto rounded-b-md border-t-2 bg-emerald-50 shadow-lg"
           sideOffset={8}
         >
           <div className="py-2">

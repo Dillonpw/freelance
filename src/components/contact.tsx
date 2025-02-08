@@ -80,7 +80,7 @@ export default function Contact() {
           <div className="flex justify-center">
             <motion.button
               type="submit"
-              className="rounded-lg bg-teal-600 px-6 py-2 font-semibold text-white transition-colors duration-300 hover:bg-teal-700"
+              className="rounded-lg cursor-pointer bg-teal-600 px-6 py-2 font-semibold text-white transition-colors duration-300 hover:bg-teal-700"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
