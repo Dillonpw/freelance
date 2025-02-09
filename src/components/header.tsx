@@ -27,7 +27,7 @@ export default function Header() {
       <nav
         className={`flex items-center justify-between px-6 backdrop-blur-xl transition-all ${
           isScrolled
-            ? "h-16 w-full bg-transparent text-black shadow-md"
+            ? "h-16 w-full bg-linear-to-t from-transparent from-70% to-emerald-50 text-black shadow-md"
             : "h-16 w-full"
         }`}
       >
