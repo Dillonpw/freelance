@@ -188,7 +188,7 @@ export default function Three() {
         if (width < 1024) return 2.2;
         return 2.6;
       }
-      return 2; // Default for SSR
+      return 1.6;
     });
 
     useEffect(() => {
