@@ -8,7 +8,6 @@ import {
 } from "@react-three/fiber";
 import { shaderMaterial, OrbitControls } from "@react-three/drei";
 
-// Material type declaration and augmentation
 declare module "@react-three/fiber" {
   interface ThreeElements {
     fluidMaterial: Object3DNode<typeof FluidMaterial, typeof FluidMaterial>;
@@ -16,7 +15,6 @@ declare module "@react-three/fiber" {
 }
 
 const vertexShader = `
-  varying vec2 vUv;
   varying vec3 vNormal;
   varying vec3 vPosition;
   varying float vDisplacement;
@@ -98,8 +96,6 @@ const vertexShader = `
   }
 
   void main() {
-    vUv = uv;
-    
     // Increase noise complexity for more organic movement
     vec3 noiseCoord = position * 0.3 + uTime * 0.3;
     float noise1 = cnoise(noiseCoord);
@@ -124,44 +120,43 @@ const vertexShader = `
 `;
 
 const fragmentShader = `
-varying vec2 vUv;
-varying vec3 vNormal;
-varying vec3 vPosition;
-varying float vDisplacement;
-uniform vec3 uBaseColor;
-uniform vec3 uAccentColor;
-uniform float uTime;
+  varying vec3 vNormal;
+  varying vec3 vPosition;
+  varying float vDisplacement;
+  uniform vec3 uBaseColor;
+  uniform vec3 uAccentColor;
+  uniform float uTime;
 
-void main() {
-  // Softer lighting direction
-  vec3 lightDirection = normalize(vec3(
-    sin(uTime * .1), 
-    cos(uTime * .1), 
-    1.5  // Increased z component for softer angles
-  ));
-  
-  // Adjusted lighting range for less contrast
-  float lightIntensity = dot(vNormal, lightDirection) * .3 + 1.0; 
-  
-  // Softened fresnel effect
-  float fresnel = pow(1.0 - max(0.0, dot(normalize(-vPosition), vNormal)), 3.0); 
-  
-  // More subtle color mixing
-  vec3 color = mix(
-    uBaseColor, 
-    uAccentColor, 
-    sin(vDisplacement * 3.0 + uTime) * .08 + .08 
-  );
-  
-  // Softened final color blend
-  color = mix(
-    color * lightIntensity,
-    (uBaseColor + uAccentColor) * 0.5,
-    fresnel * 0.4  // Reduced fresnel influence
-  );
-  
-  gl_FragColor = vec4(color, 0.85 + fresnel * 0.15);  // Adjusted opacity range
-}
+  void main() {
+    // Softer lighting direction
+    vec3 lightDirection = normalize(vec3(
+      sin(uTime * .1), 
+      cos(uTime * .1), 
+      1.5  // Increased z component for softer angles
+    ));
+    
+    // Adjusted lighting range for less contrast
+    float lightIntensity = dot(vNormal, lightDirection) * .3 + 1.0; 
+    
+    // Softened fresnel effect
+    float fresnel = pow(1.0 - max(0.0, dot(normalize(-vPosition), vNormal)), 3.0); 
+    
+    // More subtle color mixing
+    vec3 color = mix(
+      uBaseColor, 
+      uAccentColor, 
+      sin(vDisplacement * 3.0 + uTime) * .08 + .08 
+    );
+    
+    // Softened final color blend
+    color = mix(
+      color * lightIntensity,
+      (uBaseColor + uAccentColor) * 0.5,
+      fresnel * 0.4  // Reduced fresnel influence
+    );
+    
+    gl_FragColor = vec4(color, 0.85 + fresnel * 0.15);  // Adjusted opacity range
+  }
 `;
 
 const FluidMaterial = shaderMaterial(
@@ -174,7 +169,6 @@ const FluidMaterial = shaderMaterial(
   fragmentShader,
 );
 
-// Extend FluidMaterial for use in JSX
 extend({ FluidMaterial });
 
 export default function Three() {
