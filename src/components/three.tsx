@@ -184,7 +184,7 @@ export default function Three() {
     const [sphereScale, setSphereScale] = useState(() => {
       if (typeof window !== "undefined") {
         const width = window.innerWidth;
-        if (width < 640) return 2;
+        if (width < 640) return 1.6;
         if (width < 1024) return 2.2;
         return 2.6;
       }

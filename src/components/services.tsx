@@ -1,5 +1,3 @@
-"use client";
-
 import { motion } from "framer-motion";
 import { Code, Palette, Smartphone, Zap } from "lucide-react";
 

@@ -22,10 +22,10 @@ export default function Header() {
   return (
     <header
       suppressHydrationWarning
-      className="sticky top-0 left-0 z-50 flex justify-center transition-all lg:px-48"
+      className="sticky top-0 left-0 z-50 flex justify-center transition-all"
     >
       <nav
-        className={`flex items-center justify-between px-6 backdrop-blur-xl transition-all ${
+        className={`flex items-center justify-between px-6 backdrop-blur-xl transition-all lg:px-48 ${
           isScrolled
             ? "h-16 w-full bg-linear-to-t from-transparent from-70% to-emerald-50 text-black shadow-md"
             : "h-16 w-full"
