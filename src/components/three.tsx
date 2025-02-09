@@ -195,7 +195,7 @@ export default function Three() {
       const handleResize = () => {
         const width = window.innerWidth;
         if (width < 640) {
-          setSphereScale(2);
+          setSphereScale(1.6);
         } else if (width < 1024) {
           setSphereScale(2.2);
         } else {
