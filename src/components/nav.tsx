@@ -8,6 +8,7 @@ import {
   Mail,
 } from "lucide-react";
 import * as DropdownMenu from "@radix-ui/react-dropdown-menu";
+import * as motion from "motion/react-client";
 
 const menuItems = [
   { name: "Home", href: "/", icon: Home },
@@ -36,9 +37,23 @@ export default function Nav() {
           className="z-100 mx-auto w-[100vw] rounded-b-md border-t-2 bg-transparent shadow-lg backdrop-blur-2xl"
           sideOffset={8}
         >
-          <div className="py-2">
+          <motion.div
+            className="py-2"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.2 }}
+          >
             {menuItems.map((item, index) => (
-              <div key={item.name}>
+              <motion.div
+                key={item.name}
+                initial={{ opacity: 0, y: -20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{
+                  duration: 0.3,
+                  delay: index * 0.1,
+                  ease: "easeOut",
+                }}
+              >
                 <DropdownMenu.Item
                   asChild
                   className="flex cursor-pointer items-center px-4 py-2 text-sm text-gray-700 hover:bg-emerald-100 focus:outline-none md:text-lg lg:text-xl"
@@ -51,9 +66,9 @@ export default function Nav() {
                 {index < menuItems.length - 1 && (
                   <DropdownMenu.Separator className="mx-4 my-1 h-px bg-emerald-200" />
                 )}
-              </div>
+              </motion.div>
             ))}
-          </div>
+          </motion.div>
         </DropdownMenu.Content>
       </DropdownMenu.Portal>
     </DropdownMenu.Root>

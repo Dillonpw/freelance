@@ -34,9 +34,14 @@ export default function Services() {
   return (
     <section id="services" className="bg-white py-20 md:py-32 lg:py-38">
       <div className="container mx-auto px-4">
-        <h2 className="mb-12 text-center text-2xl font-bold text-emerald-600 md:mb-20 md:text-4xl">
+        <motion.h2
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="mb-12 text-center text-2xl font-bold text-emerald-600 md:mb-20 md:text-4xl"
+        >
           Our Services
-        </h2>
+        </motion.h2>
         <div className="grid grid-cols-1 gap-8 md:grid-cols-2 md:gap-18">
           {services.map((service, index) => {
             const Icon = service.icon;
@@ -47,7 +52,7 @@ export default function Services() {
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
+                transition={{ duration: 0.7, delay: index * 0.3 }}
               >
                 <div className="flex items-center gap-2">
                   <Icon className="mb-3 h-6 w-6 text-teal-600" />

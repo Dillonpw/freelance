@@ -32,7 +32,7 @@ export default function Contact() {
           <div className="mb-4">
             <label
               htmlFor="name"
-              className="mb-2 block font-semibold text-teal-700 md:text-lg"
+              className="mb-2 ml-1 block font-semibold text-teal-700 md:text-lg"
             >
               Name
             </label>
@@ -48,7 +48,7 @@ export default function Contact() {
           <div className="mb-4">
             <label
               htmlFor="email"
-              className="mb-2 block font-semibold text-teal-700 md:text-lg"
+              className="mb-2 ml-1 block font-semibold text-teal-700 md:text-lg"
             >
               Email
             </label>
@@ -64,7 +64,7 @@ export default function Contact() {
           <div className="mb-6">
             <label
               htmlFor="message"
-              className="mb-2 block font-semibold text-teal-700 md:text-lg"
+              className="mb-2 ml-1 block font-semibold text-teal-700 md:text-lg"
             >
               Message
             </label>
