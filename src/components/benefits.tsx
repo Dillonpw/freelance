@@ -14,7 +14,7 @@ const benefits = [
 
 export default function Benefits() {
   return (
-    <section id="benefits" className="bg-emerald-300 py-20 md:py-32 lg:py-38">
+    <section id="benefits" className="py-20 md:py-32 lg:py-38">
       <div className="container mx-auto px-4">
         <h2 className="mb-12 text-center text-2xl font-bold md:mb-20 md:text-4xl">
           Is a Freelance Web Developer Right for You?

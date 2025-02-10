@@ -44,7 +44,7 @@ const steps = [
 
 export default function Process() {
   return (
-    <section id="process" className="bg-white py-20 md:py-32 lg:py-38">
+    <section id="process" className="py-20 md:py-32 lg:py-38">
       <div className="container mx-auto px-4">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
