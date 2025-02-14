@@ -2,23 +2,39 @@ import * as motion from "motion/react-client";
 
 const testimonials = [
   {
-    name: "John Doe",
-    role: "CEO, TechStart",
+    name: "You",
+    role: "Business Owner",
     content:
-      "Working with this freelance web developer was a game-changer for our startup. They delivered a stunning website that perfectly captured our vision.",
+      "Be the first to leave feedback, let us now about your experience.",
   },
   {
-    name: "Jane Smith",
-    role: "Marketing Director, GreenCo",
-    content:
-      "I was impressed by the attention to detail and the ability to translate our ideas into a functional, beautiful website. Highly recommended!",
+    name: "You",
+    role: "Business Owner",
+    content: "What did you like? What could we do better?",
   },
   {
-    name: "Mike Johnson",
-    role: "Small Business Owner",
-    content:
-      "As a small business owner, I appreciated the personalized approach and the value for money. My new website has significantly boosted my online presence.",
+    name: "You",
+    role: "Business Owner",
+    content: "Our goal is to help your business grow and succeed.",
   },
+  //
+  //   name: "John Doe",
+  //   role: "CEO, TechStart",
+  //   content:
+  //     "Working with this freelance web developer was a game-changer for our startup. They delivered a stunning website that perfectly captured our vision.",
+  // },
+  // {
+  //   name: "Jane Smith",
+  //   role: "Marketing Director, GreenCo",
+  //   content:
+  //     "I was impressed by the attention to detail and the ability to translate our ideas into a functional, beautiful website. Highly recommended!",
+  // },
+  // {
+  //   name: "Mike Johnson",
+  //   role: "Small Business Owner",
+  //   content:
+  //     "As a small business owner, I appreciated the personalized approach and the value for money. My new website has significantly boosted my online presence.",
+  // },
 ];
 
 export default function Testimonials() {
@@ -47,7 +63,7 @@ export default function Testimonials() {
                 <p className="font-semibold text-teal-800 md:text-lg">
                   {testimonial.name}
                 </p>
-                <p className="text-teal-600 md:text-lg">{testimonial.role}</p>
+                <p className="text-teal-800 md:text-lg">{testimonial.role}</p>
               </div>
             </motion.div>
           ))}
