@@ -31,7 +31,7 @@ export default function Header() {
             : "h-16 w-full"
         }`}
       >
-        <img src="src/assets/logo.svg" className="h-10 w-10" alt="logo" />
+        <img src="/logo.svg" className="h-10 w-10" alt="logo" />
         <Nav />
       </nav>
     </header>
