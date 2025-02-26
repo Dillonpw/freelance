@@ -4,7 +4,6 @@ import {
   FileText,
   Palette,
   Code,
-  TestTube,
   Rocket,
 } from "lucide-react";
 
@@ -15,8 +14,8 @@ const steps = [
     icon: MessageCircle,
   },
   {
-    title: "Proposal",
-    description: "I provide a detailed plan and quote for your project.",
+    title: "Homework",
+    description: "You provide a few websites you like and what you like about them for inspiration.",
     icon: FileText,
   },
   {
@@ -26,13 +25,8 @@ const steps = [
   },
   {
     title: "Development",
-    description: "I bring the design to life with clean, efficient code.",
+    description: "I bring the design to life with, with the right tools for the job, emphasizing perforomance.",
     icon: Code,
-  },
-  {
-    title: "Testing",
-    description: "Rigorous testing ensures a flawless user experience.",
-    icon: TestTube,
   },
   {
     title: "Launch",
