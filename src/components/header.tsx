@@ -31,7 +31,9 @@ export default function Header() {
             : "h-16 w-full"
         }`}
       >
-        <img src="/logo.svg" className="h-10 w-10" alt="logo" />
+        <a href="/" className="hover:scale-105">
+          <img src="/logo.svg" className="h-10 w-10" alt="logo" />
+        </a>
         <Nav />
       </nav>
     </header>

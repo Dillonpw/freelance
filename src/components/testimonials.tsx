@@ -44,9 +44,9 @@ export default function Testimonials() {
       className="bg-emerald-300 py-20 md:py-32 lg:py-38"
     >
       <div className="container mx-auto px-4">
-        <h2 className="mb-12 text-center text-xl font-bold md:mb-20 md:text-4xl">
+        <h4 className="mb-12 text-center text-xl font-bold md:mb-20 md:text-4xl">
           What Clients Say
-        </h2>
+        </h4>
         <div className="grid grid-cols-1 gap-8 md:grid-cols-3 md:gap-4">
           {testimonials.map((testimonial, index) => (
             <motion.div

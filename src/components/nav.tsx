@@ -6,6 +6,7 @@ import {
   GitBranch,
   MessageCircle,
   Mail,
+  CircleDollarSign,
   X,
 } from "lucide-react";
 import * as DropdownMenu from "@radix-ui/react-dropdown-menu";
@@ -18,6 +19,7 @@ const menuItems = [
   { name: "Process", href: "#process", icon: GitBranch },
   { name: "Testimonials", href: "#testimonials", icon: MessageCircle },
   { name: "Benefits", href: "#benefits", icon: Award },
+  { name: "Pricing", href: "#pricing", icon: CircleDollarSign },
   { name: "Contact", href: "#contact", icon: Mail },
 ];
 
@@ -53,7 +55,7 @@ export default function Nav() {
           <DropdownMenu.Root open={isOpen} onOpenChange={setIsOpen}>
             <DropdownMenu.Trigger asChild>
               <button
-                className="flex items-center rounded-md p-2 text-gray-700 transition-colors duration-200 hover:bg-emerald-100 focus:outline-gray-400 focus:outline-none"
+                className="flex items-center rounded-md p-2 text-gray-700 transition-colors duration-200 hover:bg-emerald-100 hover:cursor-pointer focus:outline-gray-400 focus:outline-none"
                 aria-label="Toggle menu"
               >
                 {isOpen ? (

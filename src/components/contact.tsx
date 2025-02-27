@@ -25,7 +25,9 @@ export default function Contact() {
       const response = await fetch("/", {
         method: "POST",
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: new URLSearchParams(formData as unknown as Record<string, string>).toString(),
+        body: new URLSearchParams(
+          formData as unknown as Record<string, string>,
+        ).toString(),
       });
 
       if (!response.ok) {
@@ -47,9 +49,9 @@ export default function Contact() {
   return (
     <section id="contact" className="bg-white py-20 md:py-32 lg:py-38">
       <div className="container mx-auto px-4">
-        <h2 className="mb-12 text-center text-xl font-bold text-teal-600 md:mb-20 md:text-4xl">
-          Get in Touch
-        </h2>
+        <p className="mb-4 text-center font-bold text-teal-600 md:mb-6 md:text-xl">
+          Let's Discuss Your Project{" "}
+        </p>
         {isSubmitted ? (
           <motion.div
             className="mx-auto max-w-lg rounded-lg bg-teal-50 p-6 text-center"

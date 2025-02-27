@@ -21,11 +21,7 @@ const footerLinks = [
   },
   {
     title: "Legal",
-    links: [
-      { name: "Privacy Policy", href: "/privacy" },
-      { name: "Terms of Service", href: "/terms" },
-      { name: "Cookie Policy", href: "/cookies" },
-    ],
+    links: [{ name: "Privacy Policy", href: "/privacy" }],
   },
 ];
 
@@ -40,9 +36,9 @@ export default function Footer() {
   return (
     <footer className="flex justify-center bg-emerald-300">
       <div className="container px-6 py-12">
-        <div className="grid grid-cols-1 gap-8 md:grid-cols-4">
+        <div className="grid grid-cols-1 justify-center gap-8 md:grid-cols-4">
           <div>
-            <h2 className="mb-4 text-xl md:text-2xl font-bold">BRAND</h2>
+            <h2 className="mb-4 text-xl font-bold md:text-2xl">BRAND</h2>
             <p className="mb-4 md:text-lg">
               Crafting digital experiences that inspire and innovate.
             </p>
@@ -63,7 +59,9 @@ export default function Footer() {
           </div>
           {footerLinks.map((section) => (
             <div key={section.title}>
-              <h3 className="mb-4 text-lg md:text-xl font-semibold">{section.title}</h3>
+              <h3 className="mb-4 text-lg font-semibold md:text-xl">
+                {section.title}
+              </h3>
               <ul className="space-y-2">
                 {section.links.map((link) => (
                   <li key={link.name}>
@@ -79,11 +77,14 @@ export default function Footer() {
             </div>
           ))}
         </div>
-        <div className="mt-12 flex flex-col items-center justify-between md:text-lg pt-8 md:flex-row">
+        <div className="mt-12 flex flex-col items-center justify-between pt-8 md:flex-row md:text-lg">
           <p>&copy; {new Date().getFullYear()} BRAND. All rights reserved.</p>
           <div className="mt-4 flex items-center md:mt-0">
             <Mail className="mr-2 h-6 w-6" />
-            <a href="mailto:contact@brand.com" className="hover:underline md:text-lg">
+            <a
+              href="mailto:contact@brand.com"
+              className="hover:underline md:text-lg"
+            >
               contact@brand.com
             </a>
           </div>

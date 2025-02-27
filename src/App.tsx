@@ -6,6 +6,7 @@ import Benefits from "./components/benefits";
 import Process from "./components/process";
 import Testimonials from "./components/testimonials";
 import Contact from "./components/contact";
+import Pricing from "./components/pricing";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
       <Process />
       <Testimonials />
       <Benefits />
+      <Pricing />
       <Contact />
       <Footer />
     </div>
