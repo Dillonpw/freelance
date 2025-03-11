@@ -2,12 +2,12 @@ import * as motion from "motion/react-client";
 import { CheckCircle } from "lucide-react";
 
 const benefits = [
-  "Customized solutions tailored to your specific needs",
-  "Flexible scheduling and faster project turnaround",
-  "Direct communication and personalized attention",
-  "Cost-effective without compromising on quality",
-  "Diverse skill set to handle various project requirements",
-  "Ongoing support and maintenance",
+  "Personalized web solutions designed specifically for your business goals",
+  "Adaptable timelines and quicker delivery compared to larger agencies",
+  "Work directly with your developer - no middlemen or communication barriers",
+  "Professional results at competitive freelance rates",
+  "Versatile expertise covering design, development, and optimization",
+  "Reliable post-launch support and website maintenance services",
 ];
 
 //TODO: add icons maybe
@@ -23,12 +23,12 @@ export default function Benefits() {
           {benefits.map((benefit, index) => (
             <motion.div
               key={index}
-              className="flex items-start"
+              className="flex items-start tracking-tight"
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
             >
-              <CheckCircle className="mt-1 mr-4 h-6 w-6 flex-shrink-0 text-teal-300" />
+              <CheckCircle className="mr-2 h-1lh flex-shrink-0 text-teal-300" />
               <p className="text-md md:text-lg">{benefit}</p>
             </motion.div>
           ))}

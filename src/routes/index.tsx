@@ -6,7 +6,6 @@ import Services from "../components/services";
 import Benefits from "../components/benefits";
 import Process from "../components/process";
 import Testimonials from "../components/testimonials";
-import Contact from "../components/contact";
 import Pricing from "../components/pricing";
 
 export const Route = createFileRoute("/")({
@@ -23,7 +22,6 @@ function Index() {
       <Testimonials />
       <Benefits />
       <Pricing />
-      <Contact />
       <Footer />
     </div>
   );

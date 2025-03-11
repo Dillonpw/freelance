@@ -47,10 +47,14 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="bg-white py-20 md:py-32 lg:py-38">
-      <div className="container mx-auto px-4">
-        <p className="mb-4 text-center font-bold text-teal-600 md:mb-6 md:text-xl">
+    <section id="contact" className="pt-12 pb-20 md:pb-32 lg:pb-38">
+      <div className="container mx-auto gap-8 px-4">
+        <h1 className="mb-8 text-center text-4xl font-bold text-teal-600 md:mb-16">
           Let's Discuss Your Project{" "}
+        </h1>
+        <p className="mx-auto mb-8 max-w-lg text-center text-lg">
+          I'm always looking for new projects and collaborations. If you have a
+          project in mind, please don't hesitate to get in touch.
         </p>
         {isSubmitted ? (
           <motion.div
@@ -75,7 +79,7 @@ export default function Contact() {
         ) : (
           <motion.form
             onSubmit={handleSubmit}
-            className="mx-auto max-w-lg"
+            className="mx-auto max-w-lg rounded-xl border border-gray-100 bg-white p-8 shadow-lg"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.5 }}

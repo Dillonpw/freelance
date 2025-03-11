@@ -5,10 +5,8 @@ import {
   Award,
   GitBranch,
   MessageCircle,
-  Mail,
   CircleDollarSign,
   X,
-  Shield,
 } from "lucide-react";
 import * as DropdownMenu from "@radix-ui/react-dropdown-menu";
 import * as motion from "motion/react-client";
@@ -22,8 +20,6 @@ const menuItems = [
   { name: "Testimonials", href: "#testimonials", icon: MessageCircle },
   { name: "Benefits", href: "#benefits", icon: Award },
   { name: "Pricing", href: "#pricing", icon: CircleDollarSign },
-  { name: "Contact", href: "#contact", icon: Mail },
-  { name: "Privacy Policy", href: "/privacy", icon: Shield },
 ];
 
 export default function Nav() {
@@ -40,19 +36,9 @@ export default function Nav() {
 
       <nav className="relative z-10">
         {/* Horizontal menu for large screens */}
-        <div className="hidden items-center justify-center space-x-6 lg:flex">
+        <div className="hidden items-center justify-center space-x-6 xl:flex">
           {menuItems.map((item) => {
-            const isPrivacyLink = item.href === "/privacy";
-            return isPrivacyLink ? (
-              <Link
-                key={item.name}
-                to={item.href}
-                className="flex items-center text-gray-700 transition-colors duration-200 hover:text-emerald-600"
-              >
-                <item.icon className="mr-2 h-5 w-5" />
-                <span>{item.name}</span>
-              </Link>
-            ) : (
+            return (
               <a
                 key={item.name}
                 href={item.href}
@@ -66,7 +52,7 @@ export default function Nav() {
         </div>
 
         {/* Dropdown menu for small screens */}
-        <div className="lg:hidden">
+        <div className="xl:hidden">
           <DropdownMenu.Root open={isOpen} onOpenChange={setIsOpen}>
             <DropdownMenu.Trigger asChild>
               <button

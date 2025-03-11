@@ -1,4 +1,4 @@
-import { Facebook, Twitter, Instagram, Linkedin, Mail } from "lucide-react";
+import { Twitter } from "lucide-react";
 
 const footerLinks = [
   {
@@ -6,7 +6,6 @@ const footerLinks = [
     links: [
       { name: "Web Development", href: "#services" },
       { name: "UI/UX Design", href: "#services" },
-      { name: "Mobile Apps", href: "#services" },
       { name: "Consulting", href: "#services" },
     ],
   },
@@ -26,10 +25,7 @@ const footerLinks = [
 ];
 
 const socialLinks = [
-  { name: "Facebook", icon: Facebook, href: "https://facebook.com" },
-  { name: "Twitter", icon: Twitter, href: "https://twitter.com" },
-  { name: "Instagram", icon: Instagram, href: "https://instagram.com" },
-  { name: "LinkedIn", icon: Linkedin, href: "https://linkedin.com" },
+  { name: "Twitter", icon: Twitter, href: "https://x.com/dillonpw_" },
 ];
 
 export default function Footer() {
@@ -38,7 +34,7 @@ export default function Footer() {
       <div className="container px-6 py-12">
         <div className="grid grid-cols-1 justify-center gap-8 md:grid-cols-4">
           <div>
-            <h2 className="mb-4 text-xl font-bold md:text-2xl">BRAND</h2>
+            <h2 className="mb-4 text-xl font-bold md:text-2xl">Dillon Walsh</h2>
             <p className="mb-4 md:text-lg">
               Crafting digital experiences that inspire and innovate.
             </p>
@@ -78,8 +74,8 @@ export default function Footer() {
           ))}
         </div>
         <div className="mt-12 flex flex-col items-center justify-between pt-8 md:flex-row md:text-lg">
-          <p>&copy; {new Date().getFullYear()} BRAND. All rights reserved.</p>
-          <div className="mt-4 flex items-center md:mt-0">
+          <p>&copy; {new Date().getFullYear()} All rights reserved.</p>
+          {/* <div className="mt-4 flex items-center md:mt-0">
             <Mail className="mr-2 h-6 w-6" />
             <a
               href="mailto:contact@brand.com"
@@ -87,7 +83,7 @@ export default function Footer() {
             >
               contact@brand.com
             </a>
-          </div>
+          </div> */}
         </div>
       </div>
     </footer>

@@ -64,11 +64,11 @@ export default function Pricing() {
         >
           Invest in Your Business
         </motion.h6>
-        <div className="grid grid-cols-1 gap-8 md:grid-cols-1">
+        <div className="flex flex-col items-center justify-center">
           {pricingPlans.map((plan, index) => (
             <motion.div
               key={plan.title}
-              className={`relative rounded-lg md:mx-20 ${
+              className={`relative rounded-lg md:mx-20 max-w-3xl ${
                 plan.highlighted
                   ? "bg-teal-100 shadow-xl"
                   : "bg-white shadow-lg"
@@ -123,7 +123,7 @@ export default function Pricing() {
           <p className="text-teal-700 md:text-lg">
             Need something custom?{" "}
             <a
-              href="#contact"
+              href="/contact"
               className="font-medium text-teal-600 underline hover:text-teal-800"
             >
               Contact me

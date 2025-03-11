@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import Header from "../components/header";
+import Footer from "../components/footer";
 export const Route = createFileRoute("/privacy")({
   component: PrivacyPolicy,
 });
@@ -62,13 +63,7 @@ function PrivacyPolicy() {
         </div>
       </main>
 
-      <footer className="mt-auto border-t bg-white px-6 py-8">
-        <div className="mx-auto max-w-4xl text-center text-gray-600">
-          <p>
-            &copy; {new Date().getFullYear()} Dillon Walsh. All rights reserved.
-          </p>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 }

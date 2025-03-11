@@ -47,11 +47,11 @@ export default function Testimonials() {
         <h4 className="mb-12 text-center text-xl font-bold md:mb-20 md:text-4xl">
           What Clients Say
         </h4>
-        <div className="grid grid-cols-1 gap-8 md:grid-cols-3 md:gap-4">
+        <div className="grid grid-cols-1 place-items-center gap-8 md:grid-cols-3 md:gap-4">
           {testimonials.map((testimonial, index) => (
             <motion.div
               key={testimonial.name}
-              className="rounded-lg bg-white p-6 shadow-lg"
+              className="rounded-lg bg-white p-6 shadow-lg max-w-sm"
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
