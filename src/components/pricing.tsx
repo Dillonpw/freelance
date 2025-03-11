@@ -4,7 +4,7 @@ import { Check, Star } from "lucide-react";
 const pricingPlans = [
   {
     title: "Starting at",
-    price: 1499,
+    price: 1600,
     description: "Perfect for small businesses just getting started online.",
     features: [
       "Custom responsive design",
